@@ -1,0 +1,22 @@
+# NgernNgern ThongThong — ระบบบันทึกรายรับรายจ่ายส่วนบุคคล
+
+> เว็บแอปบันทึกรายรับรายจ่ายส่วนบุคคล สร้างจาก Full-Stack Template
+> Stack: Hono + Cloudflare Workers + D1 (SQLite) + KV | Vue 3 + Vuetify + Pinia | Deploy: Cloudflare Workers + Pages (ฟรี)
+> สถาปัตยกรรม backend เป็น Clean Architecture (domain → service → handler → repository)
+
+## เอกสารหลัก
+- [README.md](README.md): setup, local dev, โครงสร้าง, วิธีเพิ่ม resource/หน้าใหม่, คำสั่งที่ใช้บ่อย
+- [deploy-plan.md](deploy-plan.md): playbook deploy ขึ้น Cloudflare แบบ step-by-step แยก 🤖 agent ทำได้ / 👤 user ต้องทำเอง
+
+## โครงสร้าง
+- `backend/` — Hono API (Cloudflare Workers). Clean Architecture
+- `frontend/` — Vue 3 + Vuetify SPA. File-based routing
+- `.github/workflows/deploy.yml` — CI/CD
+
+## Resources
+- `users` — จัดการผู้ใช้ (template resource)
+- `transactions` — รายรับ/รายจ่าย: type (INCOME/EXPENSE), category, amount, description, date
+
+## หมายเหตุ
+- `backend/wrangler.jsonc` (มี ID จริง) เป็นไฟล์ลับ — ห้าม commit
+- ฟรีทั้งหมดบน Cloudflare free tier + GitHub Actions (public repo)
