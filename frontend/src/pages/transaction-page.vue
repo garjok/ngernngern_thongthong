@@ -17,7 +17,7 @@ const CATEGORIES = [
   'ค่าการศึกษา',
   'ประกัน',
   'อื่นๆ',
-] as const
+]
 
 const transactionStore = useTransactionStore()
 const { transactions, isLoading, error } = storeToRefs(transactionStore)
